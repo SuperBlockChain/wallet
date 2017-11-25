@@ -35,9 +35,9 @@ class User extends Controller
 
     public function checkLoginStatus()
     {
-    	if(!Session::has('USER_UNLOCKED')){
+    	/*if(!Session::has('USER_UNLOCKED')){
     		$this->error(Lang::get('APP_EXPIRE'),"/lock");
-    	}
+    	}*/
     	if(!Session::has('USER_ACCOUNT')){
     		$this->error(Lang::get('APP_EXPIRE'),"/login");
     	}
