@@ -663,7 +663,7 @@
             var issuer=assetAndIssur.split('.')[1];
             if(asset=='native'){
                 var asset = getAvlBalance('{$Think.session.USER_ACCOUNT}');
-		$('#payment_avl').text('---');
+		$('#payment_avl').text(asset);
                 $('#maxAccpetAmount').text('---');
             }else if(address==issuer){
                 $('#payment_avl').text('{$Think.lang.INDEX_TRANSACTION_IAMTHEISSUER}');
