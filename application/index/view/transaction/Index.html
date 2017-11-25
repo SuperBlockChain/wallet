@@ -37,6 +37,7 @@
     		<label>{$Think.lang.INDEX_TRANSACTION_PAYASSET}</label>
     		<span class="r_control">
     			<select class="form-control" id="simple_convert_src">
+    						<option value="">请选择资产</option>
                              <option value="native">超级票</option>
 
     			</select>
@@ -538,7 +539,7 @@
 	 * 转账提交
 	 */
 	$('#payment_submit').click(function() {
-		if($('#simple_convert_src').val()=='native'){
+		if($('#simple_convert_src').val()==''){
 			alert('请先选择转账资产');
 			return;
 		}
@@ -566,6 +567,7 @@
 	$('#simple_convert_obj').change(function() {
 		if($('#simple_convert_obj').val() != "") {
 			var ass = $('#simple_convert_obj').val();
+			
 			var issuer = $("#simple_convert_obj option:selected").attr("data-issuer");
 			var asset = getBalance('{$Think.session.USER_ACCOUNT}', issuer, ass);
 			$('#simple_convert_num').text(asset.balance);
