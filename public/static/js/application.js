@@ -1408,7 +1408,7 @@ function activateAccount(email,dstAccount,sec){
 						startingBalance: payAmount
 					}))
 
-					.addMemo(MySdk.Memo.text('Issuer'))
+					.addMemo(MySdk.Memo.text('auto active'))
 					.build();
 
 				transaction.sign(sourceKeys);//签名
@@ -1417,17 +1417,16 @@ function activateAccount(email,dstAccount,sec){
 					console.log(JSON.stringify(transactionResult, null, 2));
 					console.log('\nSuccess! View the transaction at: ');
 					console.log(transactionResult._links.transaction.href);
+					setTrustToUK(sec,2);//提交成功才信任
 					
 				})
 				.catch(logSubmitError);
-				//.catch(function(err){
-				//	var b = 1;
-				//});
+
 			})
 			.then(function(result) {
 			console.log('Success! Results:', result);
 			//delloading();
-			setTrustToUK(sec,2);
+			
 			})
 			.catch(alertCommonError);
 			//.catch(function(err){
@@ -1448,11 +1447,16 @@ function activateAccount(email,dstAccount,sec){
  * @param srcAccount 私钥
  */
 function setTrustToUK(s1,action,key,uid) {
+	if(! AUTO_TRUST) {
+		delloading();
+		return;//不需要自动信任，则直接返回
+	}
 	MySdk.Network.usePublicNetwork();
 	MySdk.Config.setAllowHttp(true);
 	var server = new MySdk.Server(network());
-	var dstAccount='GCMSVCVBPUR4KAIPLLGN4YX3CCTDWOYOJ6H2M3TNYJJ77LH2IBFO75DU';
-	var assetCode='UKC';
+
+	var dstAccount= AUTO_ASSET_ISSUER;
+	var assetCode= AUTO_ASSET_CODE;
 	var receivingKeys = MySdk.Keypair.fromSecret(s1);
 	var assetObj = new MySdk.Asset(assetCode, dstAccount);
 	server.loadAccount(receivingKeys.publicKey())

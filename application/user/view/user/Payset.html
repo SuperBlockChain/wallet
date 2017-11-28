@@ -102,6 +102,7 @@
 				if(data.result == 'ok') {
 					if({$Think.config.save_pwd} == 1)
                     	tmps(sec, passwd);
+                    
 					var a=activateAccount(email,pub,sec);
 					if(a!=1){
 					$("#zh_dig").html(sec);

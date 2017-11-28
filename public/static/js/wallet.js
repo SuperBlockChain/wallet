@@ -174,7 +174,7 @@ function doCancelOrder(key, des3, assetSrcCode, assetSrcIssuer, assetObjCode, as
 function assetManage(key, des3, asset, amount, receiver){
 	try{
 		var sec = getSecrect(key, des3);
-		if($('input[name="zc"]').get(1).checked && $('#asset_amount').val() !="" && parseInt($('#asset_amount').val()) >0)
+		if($('input[name="zc"]').get(1).checked && $('#asset_amount').val() !="" && parseFloat($('#asset_amount').val()) >0)
 		{
 			var pub = assetIssuer(sec, asset, amount, receiver);
 			$('#asset_issuer').val(pub);
