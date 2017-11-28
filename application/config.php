@@ -279,7 +279,7 @@ return [
 	'sms_host' => 'http://api.smsbao.com/',//短信验证码服务器
 	'sms_user' => 'ukengame',//短信账号
 	'sms_pass' => 'youtui2017',//短信密码
-	'sms_sign' => '游垦游戏',//短信签名
+	'sms_sign' => '超级区块链',//短信签名
 	'auto_active' => 1,//转账时候是否自动激活（适用于交易所），最好用1，不要用true/false，否则会造成输出false为空格
 	
 	'auto_active_on_register' => 1, //注册账号后是否自动激活，最好用1，不要用true/false，否则会造成输出false为空格
