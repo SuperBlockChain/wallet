@@ -1,7 +1,7 @@
 <?php
-namespace app\user\validate;
+namespace app\user\Validate;
 
-use think\validate;
+use think\Validate;
 
 class User extends Validate
 {
