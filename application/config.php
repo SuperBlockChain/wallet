@@ -286,8 +286,8 @@ return [
 	'active_secret' => 'SDA2FSDGUUHXVAYGQNM3ANCZOXAHHIXNOG75IWN2VH6TUBV2VVNN62LQ',//激活用户账号的私钥
 	// 默认资产，用于自动激活、自动信任用
 	'trust_on' => 0, //  是否需要自动信任资产，最好用1，不要用true/false，否则会造成输出false为空格
-	'default_asset_code' => 'UKC',//资产代码
-	'default_asset_issuer' => 'GCMSVCVBPUR4KAIPLLGN4YX3CCTDWOYOJ6H2M3TNYJJ77LH2IBFO75DU',//资产发行方
+	'default_asset_code' => 'cltb',//资产代码
+	'default_asset_issuer' => 'GAKUCX5P3SCAK6LGUT5WJG56QIOI4ABZLK4AZZYVM7KE6ELISK27Y6HZ',//资产发行方
 	/**
 	配置说明：
 	为满足不同客户的需要，需要修改本配置文件相关信息，lang语言包中“超级区块链”、“超级数字票”等信息

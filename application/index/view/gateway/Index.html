@@ -79,7 +79,7 @@
 					<eq name="mygateway.gateway_status" value="3">
 						<label>{$Think.lang.INDEX_APPLY_DENY}!</label>
 					</eq>
-					<!--<form name="appGateway" id="appGateway" method="post">
+					<form name="appGateway" id="appGateway" method="post">
 						<div class="form-group">
 							<label>{$Think.lang.INDEX_GATEWAY_ACCOUNT_ADDRESS}</label>
 							<textarea rows="2" readonly="readonly" class="form-control" name="gateway_account">{$Think.session.USER_ACCOUNT}</textarea>
@@ -91,7 +91,7 @@
 								    <input type="text" class="form-control" name="gateway_name">
 								    <button type="button" class="btn btn-success">检测</button>
 							    </div>-->
-						<!--</div>
+						</div>
 
 						<div class="form-group">
 							<label>{$Think.lang.INDEX_GATEWAY_CORP}</label>
@@ -118,18 +118,18 @@
 						<div class="form-group">
 							<label>{$Think.lang.INDEX_CONTACT_EMAIL}</label>
 							<input type="text" class="form-control" name="gateway_email" datatype="e" nullmsg="{$Think.lang.INDEX_GATEWAY_EMAIL_INPUT}" errormsg="{$Think.lang.INDEX_GATEWAY_EMAIL_ERR}">
-						</div>-->
+						</div>
 
-						<!--<div class="form-group">
+						<div class="form-group">
 							<label>{$Think.lang.INDEX_GATEWAY_SERVICES}</label>
 							<input type="text" class="form-control" placeholder="{$Think.lang.INDEX_GATEWAY_SERVICES_FORMAT}" name="gateway_service">
-						</div>-->
+						</div>
 
-						<!--<div class="form-group">
+						<div class="form-group">
 							<button type="submit" class="btn btn-primary create_submit">{$Think.lang.INDEX_GATEWAY_SUBMIT}</button>
 						</div>
 
-					</form>-->
+					</form>
 					<else/>
 					<eq name="mygateway.gateway_status" value="0">
 						<label>{$Think.lang.INDEX_GATEWAY_APPLYING}!</label>
